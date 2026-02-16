@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Assessment</title>
+    <style>
+        body{
+            margin: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+      table {
+        width: 95%;
+        border-collapse: collapse;
+        font-size: 1em;
+        text-align: center;
+        margin: 0em 2em;
+      }
+      #arrow-authors{
+        width: 30%;
+      }
+      #arrow-images{
+        width: 15%;
+      }
+      #arrow-publishedDate{
+        width:20vw
+      }
+      td{
+        padding: 10px;
+        height: 40vh;
+      }
+      
+      th {
+        border: 2px solid darkcyan;
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+
+        background-color: lightblue;
+        cursor: pointer;
+      }
+      img {
+        width: 100%;
+      }
+      .box {
+        margin-bottom: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      tr:nth-child(even){
+        background-color: lightcyan;
+      }
+      .paragraph{
+        text-align: center;
+        line-height: 1.5em;
+        /* width: 60vw; */
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center;">Book Inventory</h2>
+
+    <div class="box">
+      <input
+        type="text"
+        id="searchBox"
+        onkeyup="searchData()"
+        placeholder="Search titles..."
+      />
+    </div>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th id="arrow-images">Image</th>
+          <th onclick="sortData('title')">
+            Title <span id="arrow-title"></span>
+          </th>
+          <th onclick="sortData('isbn')">ISBN <span id="arrow-isbn"></span></th>
+          <th onclick="sortData('pageCount')">
+            Pages <span id="arrow-pageCount"></span>
+          </th>
+          <th onclick="sortData('publishedDate')">
+            Date <span id="arrow-publishedDate"></span>
+          </th>
+          <th onclick="sortData('shortDescription')">
+            Short Desc <span id="arrow-shortDescription"></span>
+          </th>
+          <th onclick="sortData('longDescription')">
+            Long Desc <span id="arrow-longDescription"></span>
+          </th>
+          <th onclick="sortData('status')">
+            Status <span id="arrow-status"></span>
+          </th>
+          <th onclick="sortData('authors')">
+            Authors <span id="arrow-authors"></span>
+          </th>
+          <th onclick="sortData('categories')">
+            Categories <span id="arrow-categories"></span>
+          </th>
+          <th onclick="sortData('price')">
+            Price <span id="arrow-price"></span>
+          </th>
+          <th onclick="sortData('currency')">
+            Currency <span id="arrow-currency"></span>
+          </th>
+          <th onclick="sortData('discount')">
+            Discount <span id="arrow-discount"></span>
+          </th>
+          <th onclick="sortData('discountUnits')">
+            Units <span id="arrow-discountUnits"></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="data-container"></tbody>
+    </table>
+
+    <div class="box">
+      <button onclick="goBack()">Previous</button>
+      <span id="pageDisplay">Page: 1</span>
+      <button onclick="goNext()">Next</button>
+    </div>
+
+    <script src="source.js"></script>
+  </body>
+</html>
